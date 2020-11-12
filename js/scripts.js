@@ -16,8 +16,11 @@ elFormRandom.addEventListener('submit', function (evt) {
 
   // Validate attempts
   if (ATTEMPT === 0) {
-    elAttemptResult.textContent = 'You lost all chances';
+    elRandomInput.value = '';
+    elRandomInput.classList.remove('is-valid', 'is-invalid');
     elRandomInput.setAttribute('disabled', true);
+    elUserResult.textContent = '';
+    elAttemptResult.textContent = 'You lost all chances';
     return;
   } else {
     elAttemptResult.textContent = --ATTEMPT;
